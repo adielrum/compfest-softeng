@@ -11,6 +11,17 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    // This object defines custom rules for your project
+    rules: {
+      // Disable the 'no-console' rule entirely
+      "no-console": "off",
+      // Disable the '@next/next/no-img-element' rule entirely
+      "@next/next/no-img-element": "off",
+      // You can also set rules to 'warn' instead of 'off' to show warnings instead of errors
+      // "no-unused-vars": "warn",
+    },
+  },
 ];
 
 export default eslintConfig;
