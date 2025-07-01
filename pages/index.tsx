@@ -1,4 +1,3 @@
-import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import FeatureList from "../components/FeatureList";
 import TestimonialSection from "../components/TestimonialSection";
