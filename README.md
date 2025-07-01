@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# SEA Catering
+
+This project is a web application for SEA Catering, built with Next.js, TypeScript, Tailwind CSS, Prisma, and NextAuth.js.
+
+## Features
+- User authentication (Sign In/Sign Up)
+- Admin dashboard
+- Menu display
+- Subscription management
+- Contact form
+
+This project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started
 
