@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 
 const mealPlans = [
@@ -21,18 +21,18 @@ const SubscriptionPage: React.FC = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submissionMessage, setSubmissionMessage] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-  useEffect(() => {
-    calculateTotalPrice();
-  }, [selectedMealPlan, selectedMealTypes, selectedDeliveryDays]);
-
-  const calculateTotalPrice = () => {
+  const calculateTotalPrice = useCallback(() => {
     if (selectedMealPlan && selectedMealTypes.length > 0 && selectedDeliveryDays.length > 0) {
       const price = selectedMealPlan.price * selectedMealTypes.length * selectedDeliveryDays.length * 4.3;
       setTotalPrice(price);
     } else {
       setTotalPrice(0);
     }
-  };
+  }, [selectedMealPlan, selectedMealTypes, selectedDeliveryDays]);
+
+  useEffect(() => {
+    calculateTotalPrice();
+  }, [calculateTotalPrice]);
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -92,7 +92,7 @@ const SubscriptionPage: React.FC = () => {
       //   setSubmissionMessage({ type: 'error', message: errorData.message || 'Subscription failed.' });
       // }
       setSubmissionMessage({ type: 'success', message: 'Subscription successful! (API integration coming soon)' });
-    } catch (error) {
+    } catch {
       setSubmissionMessage({ type: 'error', message: 'An unexpected error occurred.' });
     }
   };

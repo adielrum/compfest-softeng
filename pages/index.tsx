@@ -5,7 +5,6 @@ import TestimonialSection from "../components/TestimonialSection";
 import ContactCard from "../components/ContactCard";
 export default function Home() {
   return (
-    // <Layout>
     
       <div>
         {/* Ensure Layout component wraps this content via _app.tsx */}
@@ -15,6 +14,6 @@ export default function Home() {
         {/* Existing ContactCard might be moved to the new /contact page later */}
         <ContactCard />
       </div>
-    // </Layout>
+    
   );
 }

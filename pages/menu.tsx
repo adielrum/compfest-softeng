@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface MealPlan {
   id: number;
@@ -56,7 +57,7 @@ const MenuPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sampleMealPlans.map((plan) => (
             <div key={plan.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-              {plan.image && <img src={plan.image} alt={plan.name} className="w-full h-48 object-cover" />}
+              {plan.image && <Image src={plan.image} alt={plan.name} width={500} height={300} className="w-full h-48 object-cover" />}
               <div className="p-6 flex flex-col flex-grow">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">{plan.name}</h2>
                 <p className="text-xl text-teal-600 mb-4">{plan.price}</p>

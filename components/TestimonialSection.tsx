@@ -35,7 +35,7 @@ const TestimonialSection: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6">
             {sampleTestimonials.map((testimonial) => (
               <div key={testimonial.id} className="bg-white rounded-lg shadow-lg p-6 w-full md:w-1/2 lg:w-1/3">
-                <p className="text-gray-700 italic mb-4">"{testimonial.review}"</p>
+                <p className="text-gray-700 italic mb-4">&quot;{testimonial.review}&quot;</p>
                 <p className="text-gray-800 font-semibold">- {testimonial.name}</p>
                 <div className="flex items-center mt-2">
                   {Array(testimonial.rating).fill(0).map((_, i) => (

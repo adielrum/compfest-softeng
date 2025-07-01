@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 import { z } from 'zod';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
 
@@ -14,8 +14,6 @@ const subscriptionSchema = z.object({
   allergies: z.string().optional(),
   totalPrice: z.number().positive('Total Price must be a positive number'),
 });
-
-type SubscriptionInput = z.infer<typeof subscriptionSchema>;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {

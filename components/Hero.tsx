@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const Hero = () => {
   return (
     <section className="py-12 md:py-20 bg-teal-600 text-white">
